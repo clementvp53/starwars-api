@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.starwards.exceptions.ResourceNotFoundException;
 import com.starwars.AppConstants;
+import com.starwars.exceptions.ResourceNotFoundException;
 
 @ControllerAdvice
 public class StarWarsControllerAdvice extends ResponseEntityExceptionHandler{

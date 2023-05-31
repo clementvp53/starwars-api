@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
 
-import com.starwards.exceptions.ResourceNotFoundException;
-import com.starwards.exceptions.UnExpectedHttpException;
+import com.starwars.exceptions.ResourceNotFoundException;
+import com.starwars.exceptions.UnExpectedHttpException;
 
 public class RestTemplateErrorHandler implements ResponseErrorHandler {
 

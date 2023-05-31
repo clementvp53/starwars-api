@@ -1,4 +1,4 @@
-package com.starwards.exceptions;
+package com.starwars.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException{
 
