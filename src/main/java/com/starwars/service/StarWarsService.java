@@ -29,6 +29,11 @@ public class StarWarsService {
 	@Value("${starwars.api.url}")
 	private String starWarsApiUrl;
 
+	/**
+	 * Fetches Star ships information specific to the user
+	 * @param personId
+	 * @return List<Starship>
+	 */
 	public List<Starship> fetchStarshipsInfo(String personId) {
 		Person person = restTemplate.getForObject(starWarsApiUrl + AppConstants.PEOPLE_URL + personId, Person.class);
 		List<Starship> starships = new ArrayList<>();
@@ -38,6 +43,11 @@ public class StarWarsService {
 		return starships;
 	}
 
+	/**
+	 * Fetches species classifications specific to a film
+	 * @param filmId
+	 * @return Set<String>
+	 */
 	public Set<String> fetchSpeciesClassifications(String filmId) {
 		Film film = restTemplate.getForObject(starWarsApiUrl + AppConstants.FILMS_URL + filmId, Film.class);
 		Set<String> classifications = new HashSet<>();
@@ -50,6 +60,10 @@ public class StarWarsService {
 		return classifications;
 	}
 
+	/**
+	 * Fetches population count of all planets
+	 * @return PopulationCountRespone
+	 */
 	public PopulationCountRespone fetchPopulationCountOfAllPlanets() {
 		PopulationCountRespone response = new PopulationCountRespone();
 		BigInteger count = new BigInteger("0");

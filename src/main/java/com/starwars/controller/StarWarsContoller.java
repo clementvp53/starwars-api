@@ -32,7 +32,7 @@ public class StarWarsContoller {
 		return new ResponseEntity<>(starWarsService.fetchStarshipsInfo(userId), HttpStatus.OK);
 	}
 
-	@GetMapping(value = AppConstants.FILMS_SPECIES_CLASSFICATIONS_URL)
+	@GetMapping(value = AppConstants.FILMS_SPECIES_CLASSIFICATIONS_URL)
 	public ResponseEntity<Set<String>> getSpeciesClassfication(@PathVariable(AppConstants.ID) String filmId) {
 		return new ResponseEntity<>(starWarsService.fetchSpeciesClassifications(filmId), HttpStatus.OK);
 	}
