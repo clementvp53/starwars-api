@@ -50,7 +50,7 @@ public class StarWarsService {
 		return classifications;
 	}
 
-	public PopulationCountRespone fetchPoupationCountOfAllPlanets() {
+	public PopulationCountRespone fetchPopulationCountOfAllPlanets() {
 		PopulationCountRespone response = new PopulationCountRespone();
 		BigInteger count = new BigInteger("0");
 		int pageNo = 1;

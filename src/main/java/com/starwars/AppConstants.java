@@ -2,6 +2,11 @@ package com.starwars;
 
 public class AppConstants {
 
+	public static final String STARWARS_URL = "/starwars";
+	public static final String PEOPLE_STARSHIP_URL = "/people/{id}/starships";
+	public static final String FILMS_SPECIES_CLASSFICATIONS_URL = "/films/{id}/species/classifications";
+	public static final String POPULATION_COUNT_URL = "/totalpopulation";
+	public static final String ID = "id";
 	public static final String PEOPLE_URL = "/people/";
 	public static final String FILMS_URL = "/films/";
 	public static final String PLANETS_URL = "/planets/";

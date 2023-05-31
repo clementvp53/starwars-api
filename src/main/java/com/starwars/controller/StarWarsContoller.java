@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.starwars.AppConstants;
 import com.starwars.domain.PopulationCountRespone;
 import com.starwars.domain.Starship;
 import com.starwars.service.StarWarsService;
 
 @RestController
-@RequestMapping("/starwars")
+@RequestMapping(AppConstants.STARWARS_URL)
 public class StarWarsContoller {
 
 	@Autowired
@@ -26,19 +27,19 @@ public class StarWarsContoller {
 	@Value("${starwars.api.url}")
 	private String starWarsApiUrl;
 
-	@GetMapping(value = "/people/{id}/starships")
-	public ResponseEntity<List<Starship>> getPersonRelatedStarships(@PathVariable("id") String userId) {
+	@GetMapping(value = AppConstants.PEOPLE_STARSHIP_URL)
+	public ResponseEntity<List<Starship>> getPersonRelatedStarships(@PathVariable(AppConstants.ID) String userId) {
 		return new ResponseEntity<>(starWarsService.fetchStarshipsInfo(userId), HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/films/{id}/species/classifications")
-	public ResponseEntity<Set<String>> getSpeciesClassfication(@PathVariable("id") String filmId) {
+	@GetMapping(value = AppConstants.FILMS_SPECIES_CLASSFICATIONS_URL)
+	public ResponseEntity<Set<String>> getSpeciesClassfication(@PathVariable(AppConstants.ID) String filmId) {
 		return new ResponseEntity<>(starWarsService.fetchSpeciesClassifications(filmId), HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/totalpopulation")
+	@GetMapping(value = AppConstants.POPULATION_COUNT_URL)
 	public ResponseEntity<PopulationCountRespone> getTotalPopulation() {
-		return new ResponseEntity<>(starWarsService.fetchPoupationCountOfAllPlanets(), HttpStatus.OK);
+		return new ResponseEntity<>(starWarsService.fetchPopulationCountOfAllPlanets(), HttpStatus.OK);
 	}
 
 }
